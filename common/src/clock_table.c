@@ -7,11 +7,18 @@
  * stuff is worth it, you can buy us a beer in return.  - The sys-clk authors
  * --------------------------------------------------------------------------
  */
-
 #include <stdint.h>
 
 //number representation for all the profiles (excluding handheld = 0)
-uint32_t g_freq_table_mem_hz[] = {
+uint32_t sysclk_g_profile_table[] = {
+    1,
+    2,
+    3,
+    4,
+    0,
+};
+
+uint32_t sysclk_g_freq_table_mem_hz[] = {
     // From Hekate Minerva module
     665600000,
     800000000,
@@ -35,7 +42,7 @@ uint32_t g_freq_table_mem_hz[] = {
     0,
 };
 
-uint32_t g_freq_table_cpu_hz[] = {
+uint32_t sysclk_g_freq_table_cpu_hz[] = {
     408000000,
     510000000,
     612000000,
@@ -69,7 +76,7 @@ uint32_t g_freq_table_cpu_hz[] = {
     0,
 };
 
-uint32_t g_freq_table_gpu_hz[] = {
+uint32_t sysclk_g_freq_table_gpu_hz[] = {
     76800000,
     153600000,
     230400000,

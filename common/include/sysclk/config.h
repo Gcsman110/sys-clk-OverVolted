@@ -22,6 +22,7 @@ typedef enum {
     SysClkConfigValue_OverrideCPUBoostEnabled,
     SysClkConfigValue_OverrideGPUBoostEnabled,
     SysClkConfigValue_OverrideMEMEnabled,
+    SysClkConfigValue_OverCCEnabled,
     SysClkConfigValue_EnumMax,
 } SysClkConfigValue;
 
