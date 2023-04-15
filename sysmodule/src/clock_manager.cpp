@@ -140,17 +140,6 @@ void ClockManager::Tick()
                     hz = Clocks::GetNearestHz((SysClkModule)module, this->context->profile, hz);
                     
                 }
-            if (hz)
-            {
-                ug = this->GetConfig()->GetConfigValue(SysClkConfigValue_OverCCEnabled);
-                if (1 == ug)
-                {
-                    hz = Clocks::GetOverCCHz((SysClkModule)module, hz);
-                }
-                else
-                {
-                    hz = Clocks::GetNearestHz((SysClkModule)module, this->context->profile, hz);
-                }
 
                 
                 ogb = this->GetConfig()->GetConfigValue(SysClkConfigValue_OverrideGPUBoostEnabled);
