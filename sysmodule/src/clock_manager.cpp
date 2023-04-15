@@ -140,8 +140,18 @@ void ClockManager::Tick()
                     hz = Clocks::GetNearestHz((SysClkModule)module, this->context->profile, hz);
                     
                 }
+            if (hz)
+            {
+                ug = this->GetConfig()->GetConfigValue(SysClkConfigValue_OverCCEnabled);
+                if (1 == ug)
+                {
+                    hz = Clocks::GetOverCCHz((SysClkModule)module, hz);
+                }
+                else
+                {
+                    hz = Clocks::GetNearestHz((SysClkModule)module, this->context->profile, hz);
+                }
 
-                // BOOST MODE override: let boost mode do its job and then return back to sys/custom values (this can be toggled on and off)
                 
                 ogb = this->GetConfig()->GetConfigValue(SysClkConfigValue_OverrideGPUBoostEnabled);
                 ocb = this->GetConfig()->GetConfigValue(SysClkConfigValue_OverrideCPUBoostEnabled);

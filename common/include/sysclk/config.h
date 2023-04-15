@@ -49,6 +49,8 @@ static inline const char* sysclkFormatConfigValue(SysClkConfigValue val, bool pr
             return pretty ? "Set GPU to 76 MHz during boost" : "override_gpu_boost_enabled";
         case SysClkConfigValue_OverrideMEMEnabled:
             return pretty ? "Override MEM to 1600 MHz" : "override_mem_enabled";
+        case SysClkConfigValue_OverCCEnabled:
+            return pretty ? "Unlock overclocking past known safe clocks" : "overCC_enabled";
         default:
             return NULL;
     }
@@ -69,6 +71,8 @@ static inline uint64_t sysclkDefaultConfigValue(SysClkConfigValue val)
         case SysClkConfigValue_OverrideCPUBoostEnabled:
         case SysClkConfigValue_OverrideGPUBoostEnabled:
             return 1ULL;
+        case SysClkConfigValue_OverCCEnabled:
+            return 1ULL;
         default:
             return 0ULL;
     }
@@ -84,6 +88,7 @@ static inline uint64_t sysclkValidConfigValue(SysClkConfigValue val, uint64_t in
         case SysClkConfigValue_OverrideCPUBoostEnabled:
         case SysClkConfigValue_OverrideGPUBoostEnabled:
         case SysClkConfigValue_OverrideMEMEnabled:
+        case SysClkConfigValue_OverCCEnabled:
             return (input == 0 || input == 1);
         case SysClkConfigValue_FakeProfileModeEnabled:
             return (input >=  0 && input < 5);
