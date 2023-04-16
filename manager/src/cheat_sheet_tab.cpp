@@ -27,7 +27,7 @@ CheatSheetTab::CheatSheetTab()
     // CPU
     this->addView(new brls::Header("CPU Clocks"));
     brls::Table *cpuTable = new brls::Table();
-
+    cpuTable->addRow(brls::TableRowType::BODY, "'burn' MHz for CPU", "4233 MHz");
     cpuTable->addRow(brls::TableRowType::BODY, "Maximum", "1785 MHz");
     cpuTable->addRow(brls::TableRowType::BODY, "Official Docked and Handheld", "1020 MHz");
 
@@ -36,7 +36,7 @@ CheatSheetTab::CheatSheetTab()
     // GPU
     this->addView(new brls::Header("GPU Clocks"));
     brls::Table *gpuTable = new brls::Table();
-
+    gpuTable->addRow(brls::TableRowType::BODY, "'fire' for GPU", "3033 MHz");
     gpuTable->addRow(brls::TableRowType::BODY, "Maximum", "921 MHz");
     gpuTable->addRow(brls::TableRowType::BODY, "Official Docked", "768 MHz");
     gpuTable->addRow(brls::TableRowType::BODY, "Maximum Handheld", "460 MHz");
@@ -47,24 +47,11 @@ CheatSheetTab::CheatSheetTab()
     // MEM
     this->addView(new brls::Header("MEM Clocks"));
     brls::Table *memTable = new brls::Table();
-
+    memTable->addRow(brls::TableRowType::BODY, "'corrupt' MHz for MEM", "2515 MHz");
     memTable->addRow(brls::TableRowType::BODY, "Maximum, Official Docked", "1600 MHz");
     memTable->addRow(brls::TableRowType::BODY, "Official Handheld", "1331 MHz");
 
     this->addView(memTable);
-
-    // OverOverClocking
-    this->addView(new brls::Header("Overclockclocking"));
-    brls::Table *overclockTable = new brls::Table();
-    overclockTable->addRow(brls::TableRowType::BODY, "Reasonable Hz for CPU", "1980 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "Unsafe for CPU", "2397 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "'i-am-currently-watercooling-my-switch-and-have-money-to-burn' MHz for CPU", "3111 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "Reasonable Hz for GPU", "1000 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "Unsafe for GPU", "1152 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "'i-like-to-start-fires-and-or-kill-my-switch' MHz for GPU", "1305 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "Reasonable Hz for MEM", "1862 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "Unsafe for MEM", "2133 MHz");
-    overclockTable->addRow(brls::TableRowType::BODY, "'i-am-aware-of-the-high-possiblity-my-HOS-may-corrupt' MHz for MEM", "2323 MHz");
 }
 
 void CheatSheetTab::customSpacing(brls::View* current, brls::View* next, int* spacing)
